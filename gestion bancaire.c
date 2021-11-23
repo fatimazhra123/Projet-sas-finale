@@ -16,11 +16,11 @@ struct gestion_bancaire compt1 ;
        do{
            fscanf(ab,"%s;%s;%s;%f \n",&compt1.nom,&compt1.prenom,&compt1.cin,&compt1.montant);
            fflush(stdin);
-      printf("*********** formation de compt1 bancaire\n*********"); 
+    printf("*********** formation de compt1 bancaire\n*********"); 
     printf("le_nom_de_client:%s\n",compt1.nom);
-      printf("le prenom_de_client:%s\n",compt1.prenom);
-printf("numero_de_cin: %s\n",compt1.cin);
-printf("le montant de client:%f");
+    printf("le prenom_de_client:%s\n",compt1.prenom);
+    printf("numero_de_cin: %s\n",compt1.cin);
+    printf("le montant de client:%f",compt1.montant);
 }while(!feof(ab));
 fclose(ab);
 } 
@@ -47,59 +47,92 @@ fflush(stdin);
     scanf("%s",&compt1.montant);
      fprintf(ab,"%f",compt1.montant);
      fflush(stdin);
-
+ fscanf(ab,"%s;%s;%s;%f \n",&compt1.nom,&compt1.prenom,&compt1.cin,&compt1.montant);
 }
        
 
-int main(){
-
-ajouter();
-    return 0;
-}
+/*
 void afficher(){
   FILE* ab;
 	ab=fopen("compt.text","r");
 	do{ 
 	printf("*********** formation de compt1 bancaire\n*********");
-	
-	scanf(ab,"%s",&compt1.nom);
-	printf("entrer le nom:%s\n");
+	fscanf(ab,"%s",&compt1.nom);
+    printf("entrer le nom:%s \n",compt1.nom);
 	fflush(stdin);
-	scanf(ab,"%s",&compt1.prenom);
-	printf("entrer le prenom:%s\n");
+	fscanf(ab,"%s",&compt1.prenom);
+	printf("entrer le prenom:%s \n",compt1.prenom);
 	fflush(stdin);
-	scanf(ab,"%s",&compt1.cin);
-	printf("numero de cin:%s\n");
+	fscanf(ab,"%s",&compt1.cin);
+	printf("numero de cin:%s :\n",compt1.cin);
 	fflush(stdin);
-    scanf(ab,"%s",&compt1.montant);
-	printf("entrer le montant:%s\n");
+	fscanf(ab,"%s",&compt1.montant);
+	printf("entrer le montant:%s \n",compt1.montant);
 	fflush(stdin);
+	fscanf(ab,"%s;%s;%s:%f \n",&compt1.nom,&compt1.prenom,&compt1.cin,&compt1.montant);
+
 }while(!feof(ab));
 fclose(ab);
 }
-
+*/
 void retrait(float solde){
 	 FILE* ab;
     ab=fopen("compt.text","r");
     do{
     	printf("*********** formation de compt1 bancaire\n*********");
 	
-	scanf(ab,"%s",&compt1.nom);
-	printf("entrer le nom:%s\n");
+	fscanf(ab,"%s",&compt1.nom);
+	printf("entrer le nom:%s\n",compt1.nom);
 	fflush(stdin);
-	scanf(ab,"%s",&compt1.prenom);
-	printf("entrer le prenom:%s\n");
+	fscanf(ab,"%s",&compt1.prenom);
+	printf("entrer le prenom:%s\n",compt1.prenom);
 	fflush(stdin);
-	scanf(ab,"%s",&compt1.cin);
-	printf("numero de cin:%s\n");
+	fscanf(ab,"%s",&compt1.cin);
+	printf("numero de cin:%s\n",compt1.cin);
 	fflush(stdin);
-    scanf(ab,"%s",&compt1.montant);
-	printf("entrer le montant:%f\n",compt1.montant-solde);
+    fscanf(ab,"%s",&compt1.montant);
+	printf("entrer le montant:%f Dh\n",compt1.montant-solde);
 	
 	fflush(stdin);
 	} while(!feof(ab));
 	fclose(ab);
 }
+/*
+void rechercher(){
+
+	int Numrs[50];
+	FILE* ab;
+    ab=fopen("compt.text","a");
+    
+    printf("donner le Numrs de recherche:\n");
+    scanf("%d",&Numrs);
+   do 
+{
+
+  fscanf(ab,"%s;%s;%s;%f \n",&compt1.nom,&compt1.prenom,&compt1.cin,&compt1.montant);
+  if 	(Numrs==compt1.cin){
+
+				
+    	printf("----formation de compt1 bancaire:-----\n\n");
+
+
+printf("Numrero\t:%s\n",compt1.nom);
+printf("Numrero\t:%s\n",compt1.prenom);
+printf("Numrero\t:%s\n",compt1.cin);
+printf("Numrero\t:%f\n",compt1.montant);
+				}
+	}while(!feof(ab));
+	fclose(ab);*/
+		
 	
+
+int main(){
+ //afficher();
+ 
+ajouter();
+    return 0;
+}
+
+
 
 
