@@ -145,29 +145,39 @@ void rechercher(){
    {
    
 
-/*
-printf("\n ----Le menu principal------ \n");
-printf("\n1.*********** formation de compt1 bancaire*********\n");
-printf("\n2. Introduire plusieurs comptes bancaires ");
-printf"\n3***********le montant apres le retrait*********\n"();
-printf("\n------------le montant apres le DEPOT-------\n");
-printf("\n..Quitte");
 
-printf("\n       entre votre choix : ");
-scanf("%d",&choix);
+int main() {
+
+
+int choix ;
+char rep;
+
 do{
+system ("cls");	
+printf("\n****************** MENU ************$ \n");
+printf("\n1---------UN COMPTE BANCAIRe-----------");
+printf("\n--2------afficjier les comptes bancaire");
+printf("\n--3------les montant apres le retrait");
+printf("\n--4----les montant apres le depot");
+printf("\n------- Quitte----");
+printf("\n-------**********------- \n");
+printf("\n  entre votre choix : ");
+scanf("%d",&choix);
+
+
 switch(choix){
 case 1:
-ajoutecompt1();
+ajoutecomp();
 break;
 case 2:
-afficher();
+afficher1();
 break;
 case 3:
-retrait();
+retrait(1000);
+
 break;
 case 4:
-DEPOT();
+DEPOT(1000);
 break;
 case 5:
 break;
@@ -175,15 +185,13 @@ break;
 
 
 
+printf("\n MENU : O  or   QUITTE : N ? ");
+scanf("%s",&qus);
+
+fflush(stdin);
+}while (qus=='o' || qus =='O' );
+
+
+
  return 0;
 }
-*/
-
-int main(){
-
- 
-ajouter();
-    return 0;
-	}
-
-
