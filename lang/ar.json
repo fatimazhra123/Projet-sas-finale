@@ -1,0 +1,34 @@
+{
+    "تسجيل الدخول":"Sign in",
+    "انشاء حساب" :"Sign Up",
+    "ادخل بريدك الالكتروني و القن السري لتسجيل الدخول":"Enter your email address and your password  to login",
+    "البريد الالكتروني":"Email",
+    "القن السري":"Password",
+    "املأ معلوماتك لانشاء حسابك":"Fill in your information to create your account",
+    "الاسم":"First Name",
+    "النسب":"Last Name",
+   "تأكيد القن السري":"verification of password",
+   "زبون":"customer",
+   "مستخدم" :"employee",
+   "رقم التسجيل ":"Registration number",
+   "رقم الهاتف" :"Phone Number",
+   "المرجوا ملأ معلوماتك لانشاء حسابك":"Please fill in your information to create your account",
+  "املأ حقل الاسم و النسب":"Fill in the first Name and last Name",
+  "يجب أن يتكون الاسم و النسب من ثلاثة أحرف على الأقل":"Name and last Name must consist of at least three characters",
+  "املأ حقل البريد الإلكتروني":"Fill in the email",
+  "البريد الإلكتروني غير صالح":"Email is invalid",
+  "املأ حقل رقم الهاتف":"Fill in the phone number",
+  "رقم الهاتف غير صالح":"Invalid phone number",
+  "املأ حقل كلمة المرور":"Fill in the password ",
+  "يجب أن تتكون كلمة المرور من ستة أحرف على الأقل":"The password must be at least six characters long.",
+  "املأ حقل تاكيد كلمة المرور":"Fill in the password confirmation",
+  "تاكيد من كلمة المرور":"Confirm the password",
+  "اختر دورك":"Choose your role",
+  "ادخل رقم التسجيل":"Enter the registration number"
+
+
+
+  
+
+
+}
