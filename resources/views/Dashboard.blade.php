@@ -17,7 +17,7 @@
                 <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
                     <div class="card border-0 shadow-sm" style="min-height: 150px; border-radius: 16px;">
                         <div class="card-body d-flex flex-column justify-content-between align-items-center p-3">
-                            <h4 class="text-sm mb-0 text-uppercase font-weight-bold">المسؤولين</h4>
+                            <h4 class="text-sm mb-0 text-uppercase font-weight-bold">{{__('المسؤولين')}}      المسؤولين</h4>
                             <h3 class="font-weight-bolder">{{ $Admin }}</h3>
                         </div>
                     </div>

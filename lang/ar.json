@@ -24,8 +24,23 @@
   "املأ حقل تاكيد كلمة المرور":"Fill in the password confirmation",
   "تاكيد من كلمة المرور":"Confirm the password",
   "اختر دورك":"Choose your role",
-  "ادخل رقم التسجيل":"Enter the registration number"
-
+  "ادخل رقم التسجيل":"Enter the registration number",
+  "تم اظافة الحساب بنجاح المرجو التحقق من علبة الرسائل لتلقي بريد التفعيل":"The account has been added successfully please check the message box to receive activation mail",
+ "المستخدمون فقط من يستطيعون انشاء حساب المرجو ادخال رقم تسجيل صالح":"Only users who can create an account please enter a valid registration number",
+ "المرجوا ادخال بريدك الالكتروني و القن السري لتسجيل الدخول":"Please enter your email address and secret code to login",
+ "قم بالتسجيل لبدء صرف العملات الدولية معنا":"Sign up to start exchanging international currencies with us",
+ "!!مرحبا ":"Welcome!!",
+ ".هل لديك":"Do you have.",
+ "حساب":"account",
+ "؟ تسجيل الدخول من":"؟ Login from",
+ "هنا":"here",
+ "المسؤولين":"Officials",
+ "المستخدمون":"employes",
+ "الزبناء":"Customers",
+ "العمليات التجارية":"Business Processes",
+ "الدور":"Role"
+ 
+ 
 
 
   

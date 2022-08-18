@@ -107,6 +107,9 @@ Route::get('/verify-email/{id}','UserController@verify_email' )->name('verify_em
 
 Route::get('/logout','UserController@logout');
 
+
+
+
 Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => ['localeSessionRedirect','localizationRedirect','localeViewPath']], function()
 {
 
@@ -118,6 +121,14 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => ['loc
     Route::get('/Sign_Up',function(){
 		return View('/Sign_Up');
 	});
+ 
+    Route::get('/home',function(){
+		return View('/home');
+	});
+    Route::get('/Dashboard',function(){
+		return View('/Dashboard');
+	});
+ 
  
 });
 

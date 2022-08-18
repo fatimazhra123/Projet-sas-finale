@@ -19,11 +19,24 @@
         </div>
         <div class="col-lg-6 p-0" id="sign-form">
             <!---------------------- Menu Sign ---------------------->
+
             <div class="w-100 d-flex" id="menu-sign">
+               
+
                 <a href="Sign_Up" type="button" class="nav-link w-50 h4 text-dark text-center active" id="btn_signup">{{__('انشاء حساب') }}</a>
                 <a href="Sign" type="button" class="nav-link w-50 h4 text-dark text-center" id="btn_signin">{{__('تسجيل الدخول') }}</a>
             </div>
             <!---------------------- Sign Up ---------------------->
+            
+            <button> 
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    
+                        <a rel="alternate" hreflang="{{ $localeCode }}" class="form-select" style="max-width: 100px; border:none; background-color: var(--second-color);" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                  
+                @endforeach
+                </button>
             <div id="signup">
                 <div class="d-flex flex-column justify-content-center" style="width: 80%; height: 85vh; margin-left: 10%;">
                     <h1 class="text-center">{{__('انشاء حساب') }}</h1>

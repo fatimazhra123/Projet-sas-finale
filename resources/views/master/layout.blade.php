@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  dir="{{LaravelLocalization::getCurrentLocaleDirection() }}">
 
 <head>
     <meta charset="UTF-8">

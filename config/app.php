@@ -84,7 +84,8 @@ return [
 
     'locale' => 'ar',
     'languages'=> [
-      'ar' => 'Arabic','en' => 'English'
+      'ar' => 'العربية',
+      'en' => 'English'
     ],
 
     /*
@@ -98,7 +99,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'ar',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  dir="{{LaravelLocalization::getCurrentLocaleDirection() }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,17 +13,30 @@
 </head>
 
 <body>
-    <div id="sign">
+   
+       <div id="sign">
         <div class="col-6 d-lg-flex d-none justify-content-center align-items-center" id="home-logo">
             <img src="{{asset('image/logo.png')}}">
         </div>
         <div class="col-lg-6 p-0" id="sign-form">
             <!---------------------- Menu Sign ---------------------->
+            
             <div class="w-100 d-flex" id="menu-sign">
+                
+              
                 <a href="Sign_Up" type="button" class="nav-link w-50 h4 text-dark text-center" id="btn_signup">{{__('انشاء حساب') }}</a>
                 <a href="Sign" type="button" class="nav-link w-50 h4 text-dark text-center active" id="btn_signin">{{__('تسجيل الدخول') }}</a>
             </div>
             <!---------------------- Sign In ---------------------->
+            <button> 
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    
+                        <a rel="alternate" hreflang="{{ $localeCode }}" class="form-select" style="max-width: 100px; border:none; background-color: var(--second-color);" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+                            {{ $properties['native'] }}
+                        </a>
+                  
+                @endforeach
+                </button>
             <div id="signin">
                 <div class="d-flex flex-column justify-content-center gap-2" style="width: 80%; height: 85vh; margin-left: 10%;">
                     <h1 class="text-center">{{__('تسجيل الدخول') }}</h1>
@@ -71,24 +84,24 @@
     form_signin.addEventListener('submit', (e) => {
         if ((email_signin.value == "") && (password_signin.value == "")) {
             e.preventDefault();
-            error_signin.innerHTML = "<p class='text-danger'>المرجوا ادخل بريدك الالكتروني و القن السري لتسجيل الدخول</p>";
+            error_signin.innerHTML ="<p class='text-danger'>{{__('المرجوا ادخل بريدك الالكتروني و القن السري لتسجيل الدخول ')}}</p>";
         } else {
-            error_signin.innerText = "ادخل بريدك الالكتروني و القن السري لتسجيل الدخول";
+            error_signin.innerText = "{{__('ادخل بريدك الالكتروني و القن السري لتسجيل الدخول') }}";
             if (email_signin.value == "") {
                 e.preventDefault();
-                error_email.innerText = "املأ حقل البريد الإلكتروني";
+                error_email.innerText = "{{__('املأ حقل البريد الإلكتروني') }}";
             } else if (pattern_email.test(email_signin.value)) {
                 error_email.innerText = "";
             } else if (!pattern_email.test(email_signin.value)) {
                 e.preventDefault();
-                error_email.innerText = "البريد الإلكتروني غير صالح";
+                error_email.innerText = "{{__('البريد الإلكتروني غير صالح') }}";
             }
             if (password_signin.value == "") {
                 e.preventDefault();
-                error_password.innerText = "املأ حقل كلمة المرور";
+                error_password.innerText = "{{__('املأ حقل كلمة المرور') }}";
             } else if (password_signin.value.length < 6) {
                 e.preventDefault();
-                error_password.innerText = "يجب أن تتكون كلمة المرور من ستة أحرف على الأقل.";
+                error_password.innerText = "{{__('يجب أن تتكون كلمة المرور من ستة أحرف على الأقل') }}";
             } else if (password_signin.value.length >= 6) {
                 error_password.innerText = "";
             }
