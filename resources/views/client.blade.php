@@ -31,10 +31,19 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
+        @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <div class="d-flex flex-row-reverse justify-content-between align-items-center m-4">
-          <h4>الزبناء</h4>
+          <h4>{{__('الزبناء') }}</h4>
           <div class="input-group me-3" style="width: 25%;">
-            <input type="text" class="form-control" placeholder="الاسم" style="height: 45px;">
+            <input type="text" class="form-control" placeholder="{{__('الاسم') }}" style="height: 45px;">
             <span class="input-group-text" style="border-radius: 0px 16px 16px 0px;"><i class="bi bi-search"></i></span>
           </div>
           <button type="button" class="btn btn-primary" style="background-color:white; color:black; border:none;" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -48,17 +57,17 @@
                 <form method="Post" action="{{ route('add.Client') }}">
                   @csrf
                   <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">اظافة زبون</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">{{__('اظافةزبون') }}</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body d-flex flex-column gap-4">
-                    <input type="text" name="First_Name" class="form- " placeholder="*الاسم">
-                    <input type="text" name="Last_Name" class="form-control " placeholder="*النسب">
-                    <input type="text" name="Email" class="form-control " placeholder="*البريد الالكتروني">
-                    <input type="text" name="Phone" class="form-control " placeholder="*رقم الهاتف">
+                    <input type="text" name="First_Name" class="form- " placeholder="{{__('الاسم') }}">
+                    <input type="text" name="Last_Name" class="form-control " placeholder="{{__('النسب')}}">
+                    <input type="text" name="Email" class="form-control " placeholder="{{__('البريد الالكتروني') }}">
+                    <input type="text" name="Phone" class="form-control " placeholder="{{__('رقم الهاتف') }}">
                     <input type="text" name="Balance" class="form-control " placeholder="* الرصيد" style="height: 45px;">
-                    <input type="text" name="Password" class="form-control " placeholder="*القن السري" style="height: 45px;">
-                    <input type="text" name="Password_verif" class="form-control" placeholder="  تأكيد القن السري" style="height: 45px;">
+                    <input type="text" name="Password" class="form-control " placeholder="{{__('القن السري') }}" style="height: 45px;">
+                    <input type="text" name="Password_verif" class="form-control" placeholder="{{__('تأكيد القن السري') }}" style="height: 45px;">
                     <div class="search_select_box w-100">
                         <select class="selectpicker w-100" name="devise" data-live-search="true">
                             @foreach ($devise as $devise) :
@@ -68,8 +77,8 @@
                     </div>
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
-                    <button type="submit" class="btn btn-primary">حفظ</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('اغلاق')}}</button>
+                    <button type="submit" class="btn btn-primary">{{__('حفظ')}}</button>
                   </div>
                 </form>
               </div>
@@ -82,15 +91,15 @@
           <thead>
             <tr>
               <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
-              <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">البيان</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">العملة</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">دائن</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">مدين</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">الرصيد</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">رقم الهاتف</th>
-              <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">البريد الالكتروني</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">النسب</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">الاسم</th>
+              <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('البيان')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('العملة')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('دائن')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('مدين')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('الرصيد')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('رقم الهاتف') }}</th>
+              <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> {{__('البريد الالكتروني') }}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('النسب')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('الاسم') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -127,16 +136,16 @@
               <form method="Post" action="{{ route('add.Client') }}">
                 @csrf
                 <div class="modal-header ">
-                  <h5 class="modal-title " id="exampleModalLabel">اظافة زبون</h5>
+                  <h5 class="modal-title " id="exampleModalLabel">{{__('اظافةزبون') }}</h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body  d-flex flex-column gap-4 ">
                     <input type="hidden" class="id_devise" name="Id">
-                    <input type="text" class="First_Name" name="First_Name" class="form- " placeholder="*الاسم">
-                    <input type="text" class="Last_Name" name="Last_Name" class="form-control " placeholder="*النسب">
-                    <input type="text"class="Email" name="Email" class="form-control " placeholder="*البريد الالكتروني">
-                    <input type="text" class="Phone" name="Phone" class="form-control " placeholder="*رقم الهاتف">
-                    <input type="text" class="Balance" name="Balance" class="form-control " placeholder="* الرصيد" style="height: 45px;">
+                    <input type="text" class="First_Name" name="First_Name" class="form- " placeholder="{{__('الاسم') }}">
+                    <input type="text" class="Last_Name" name="Last_Name" class="form-control " placeholder="{{__('النسب')}}">
+                    <input type="text"class="Email" name="Email" class="form-control " placeholder="{{__('البريد الالكتروني') }}">
+                    <input type="text" class="Phone" name="Phone" class="form-control " placeholder="{{__('رقم الهاتف') }}">
+                    <input type="text" class="Balance" name="Balance" class="form-control " placeholder="{{__('الرصيد')}}" style="height: 45px;">
                     <div class="search_select_box w-100">
                         <select class="selectpicker w-100 devise" name="devise" data-live-search="true">
                             @foreach ($devise_edit as $devise) :
@@ -146,8 +155,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
-                  <button type="submit" class="btn btn-primary">حفظ</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('اغلاق')}}</button>
+                  <button type="submit" class="btn btn-primary">{{__('حفظ')}}</button>
                 </div>
               </form>
             </div>
@@ -159,7 +168,7 @@
 <!-- client supprimés -->
 
     <div class="container-fluid py-4">
-      <div class="card border-0 shadow-sm overflow-auto" style="min-height: 200px; max-height: 560px; border-radius: 16px;">
+      <div class="card border-0 shadow-sm overflow-auto " style="min-height: 200px; max-height: 560px; border-radius: 16px;">
         @if (session('success_restore'))
         <div class="alert alert-success text-center alert-dismissible fade show" role="alert">
           {{ session('success_restore') }}
@@ -167,15 +176,13 @@
         </div>
         @endif
 
-        <div class="d-flex flex-row-reverse justify-content-between align-items-center m-4">
-          <h4>الزبناء المحذوفين</h4>
-          <div class="input-group me-3" style="width: 25%;">
-            <input type="text" class="form-control" placeholder="الاسم" style="height: 45px;">
+        <div class="d-flex  flex-row-reverse justify-content-between align-items-center m-4">
+          <h4>{{__('الزبناء المحذوفين')}}</h4>
+          <div class="input-group  me-3" style="width: 25%;">
+            <input type="text" class="form-control" placeholder="{{__('الاسم') }}" style="height: 45px;">
             <span class="input-group-text" style="border-radius: 0px 16px 16px 0px;"><i class="bi bi-search"></i></span>
           </div>
-          <button type="button" class="btn btn-primary" style="background-color:white; color:black; border:none;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="bi bi-plus-circle-fill h1"></i>
-          </button>
+         
 
         </div>
 
@@ -183,15 +190,15 @@
           <thead>
             <tr>
               <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
-              <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">البيان</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">العملة</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">دائن</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">مدين</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">الرصيد</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">رقم الهاتف</th>
-              <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">البريد الالكتروني</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">النسب</th>
-              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">الاسم</th>
+              <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('البيان')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('العملة')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('دائن')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('مدين')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('الرصيد')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> {{__('رقم الهاتف') }}</th>
+              <th class="col-2 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('البريد الالكتروني') }}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('النسب')}}</th>
+              <th class="col-1 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('الاسم') }}</th>
             </tr>
           </thead>
           <tbody>
@@ -224,28 +231,28 @@
       </div>
     </div>
     <script>
-            // Update Of Devise
-            document.querySelectorAll('.btn-edit').forEach(function(btn){
-                btn.addEventListener('click',function(event){
-                    let select = event.target.closest('.item');
-                    let id_devise = select.querySelector('.id_devise').innerHTML;
-                    let First_Name = select.querySelector('.First_Name').innerHTML;
-                    let Last_Name = select.querySelector('.Last_Name').innerHTML;
-                    let Email = select.querySelector('.Email').innerHTML;
-                    let Phone = select.querySelector('.Phone').innerHTML;
-                    let Balance = select.querySelector('.Balance').innerHTML;
-                    let Devise = select.querySelector('.Devise').innerHTML;
+        // Update Of Devise
+        document.querySelectorAll('.btn-edit').forEach(function(btn){
+            btn.addEventListener('click',function(event){
+                let select = event.target.closest('.item');
+                let id_devise = select.querySelector('.id_devise').innerHTML;
+                let First_Name = select.querySelector('.First_Name').innerHTML;
+                let Last_Name = select.querySelector('.Last_Name').innerHTML;
+                let Email = select.querySelector('.Email').innerHTML;
+                let Phone = select.querySelector('.Phone').innerHTML;
+                let Balance = select.querySelector('.Balance').innerHTML;
+                let Devise = select.querySelector('.Devise').innerHTML;
 
-                    document.querySelector('#exampleModaledit .id_devise').value = id_devise;
-                    document.querySelector('#exampleModaledit .First_Name').value = First_Name;
-                    document.querySelector('#exampleModaledit .Last_Name').value = Last_Name;
-                    document.querySelector('#exampleModaledit .Email').value = Email;
-                    document.querySelector('#exampleModaledit .Phone').value = Phone;
-                    document.querySelector('#exampleModaledit .Balance').value = Balance;
-                    document.querySelector('#exampleModaledit .Devise').value = Devise;
-                })
+                document.querySelector('#exampleModaledit .id_devise').value = id_devise;
+                document.querySelector('#exampleModaledit .First_Name').value = First_Name;
+                document.querySelector('#exampleModaledit .Last_Name').value = Last_Name;
+                document.querySelector('#exampleModaledit .Email').value = Email;
+                document.querySelector('#exampleModaledit .Phone').value = Phone;
+                document.querySelector('#exampleModaledit .Balance').value = Balance;
+                document.querySelector('#exampleModaledit .Devise').value = Devise;
             })
-        </script>
+        })
+    </script>
     <!-- Copyright -->
     <div class="position-fixed bottom-0 start-50 text-center h6">Copyright &copy; SayfCo 2022</div>
   </div>

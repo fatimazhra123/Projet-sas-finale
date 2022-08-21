@@ -45,24 +45,24 @@ const pattern_email = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 form_signin.addEventListener('submit', (e) => {
     if ((email_signin.value == "") && (password_signin.value == "")) {
         e.preventDefault();
-        error_signin.innerHTML = "<p class='text-danger'>المرجوا ادخل بريدك الالكتروني و القن السري لتسجيل الدخول</p>";
+        error_signin.innerHTML = "<p class='text-danger'>{{__('المرجوا ادخل بريدك الالكتروني و القن السري لتسجيل الدخول ')}}</p>";
     } else {
-        error_signin.innerText = "ادخل بريدك الالكتروني و القن السري لتسجيل الدخول";
+        error_signin.innerText = "{{__('ادخل بريدك الالكتروني و القن السري لتسجيل الدخول') }}";
         if (email_signin.value == "") {
             e.preventDefault();
-            error_email.innerText = "املأ حقل البريد الإلكتروني";
+            error_email.innerText = "{{__('املأ حقل البريد الإلكتروني') }}";
         } else if (pattern_email.test(email_signin.value)) {
             error_email.innerText = "";
         } else if (!pattern_email.test(email_signin.value)) {
             e.preventDefault();
-            error_email.innerText = "البريد الإلكتروني غير صالح";
+            error_email.innerText = "{{__('البريد الإلكتروني غير صالح') }}";
         }
         if (password_signin.value == "") {
             e.preventDefault();
-            error_password.innerText = "املأ حقل كلمة المرور";
+            error_password.innerText = "{{__('املأ حقل كلمة المرور') }}";
         } else if (password_signin.value.length < 6) {
             e.preventDefault();
-            error_password.innerText = "يجب أن تتكون كلمة المرور من ستة أحرف على الأقل.";
+            error_password.innerText = "{{__('يجب أن تتكون كلمة المرور من ستة أحرف على الأقل') }}";
         } else if (password_signin.value.length >= 6) {
             error_password.innerText = "";
         }
@@ -93,7 +93,7 @@ const pattern_phone = /[0-9]/;
 form_signup.addEventListener('submit', (e) => {
     if ((first_name.value == "") && (last_name.value == "") && (email_signup.value == "") && (phone_signup.value == "") && (password_signup.value == "") && (conf_password_signup.value == "")) {
         e.preventDefault();
-        error_signup.innerHTML = "<p class='text-danger'>المرجوا ملأ معلوماتك لانشاء حسابك</p>";
+        error_signup.innerHTML = "<p class='text-danger'>{{__('المرجوا ملأ معلوماتك لانشاء حسابك')}}</p>";
     } else {
         error_signup.innerText = "املأ معلوماتك لانشاء حسابك";
         if ((first_name.value == "") || (last_name.value == "")) {

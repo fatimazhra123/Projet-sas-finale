@@ -33,7 +33,7 @@
                 </div>
                 @endif
                 <div class=" d-flex flex-row-reverse justify-content-between align-items-center m-4">
-                    <h4>المسؤولين</h4>
+                    <h4> {{__('المسؤولين') }}</h4>
                     <div class="input-group me-3" style="width: 25%;">
                         <input type="text" class="form-control" placeholder="الاسم" style="height: 45px;">
                         <span class="input-group-text" style="border-radius: 0px 16px 16px 0px;"><i class="bi bi-search"></i></span>
@@ -50,19 +50,19 @@
                                 <form method="Post" action="{{route('add.Admin')}}">
                                     @csrf
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">اظافة مسؤول</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel"> {{__('اظافة مسؤول') }}</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body d-flex flex-column gap-4">
-                                        <input type="text" name="First_Name" class="form-control" placeholder="*الاسم">
-                                        <input type="text" name="Last_Name" class="form-control" placeholder="*النسب">
-                                        <input type="text" name="Email" class="form-control" placeholder="*البريد الالكتروني">
-                                        <input type="text" name="Phone" class="form-control" placeholder="*رقم الهاتف">
-                                        <input type="text" name="Password" class="form-control" placeholder="*القن السري">
+                                        <input type="text" name="First_Name" class="form-control" placeholder="{{__('الاسم') }}">
+                                        <input type="text" name="Last_Name" class="form-control" placeholder="{{__('النسب')}}">
+                                        <input type="text" name="Email" class="form-control" placeholder="{{__('البريد الالكتروني') }}">
+                                        <input type="text" name="Phone" class="form-control" placeholder="{{__('رقم الهاتف') }}">
+                                        <input type="text" name="Password" class="form-control" placeholder="{{__('القن السري') }}">
                                     </div>
                                     <div class="modal-footer d-flex justify-content-between">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
-                                        <button type="submit" class="btn btn-primary">حفظ</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('اغلاق')}}</button>
+                                        <button type="submit" class="btn btn-primary">{{__('حفظ')}}</button>
                                     </div>
                                 </form>
 
@@ -72,14 +72,14 @@
                     <!-- Modal Add Admin -->
 
                 </div>
-                <table class="table  mb-0 text-center">
+                <table class="table mb-0 text-center">
                     <thead>
                         <tr>
                         @if(session('role')=='Admin') <th></th>@endif
-                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">رقم الهاتف</th>
-                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">البريد الالكتروني</th>
-                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">النسب</th>
-                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">الاسم</th>
+                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> {{__('رقم الهاتف') }}</th>
+                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('البريد الالكتروني') }} </th>
+                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('النسب')}}</th>
+                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('الاسم') }}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -113,20 +113,20 @@
                                     <form method="Post" action="{{ route('add.Admin') }}">
                                         @csrf
                                         <div class="modal-header ">
-                                            <h5 class="modal-title " id="exampleModalLabel">اظافة عملة</h5>
+                                            <h5 class="modal-title " id="exampleModalLabel">{{__('اظافة عملة')}}</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body d-flex flex-column gap-4">
                                             <input type="hidden" class="id_devise" name="Id" >
-                                            <input type="text" class="First_Name" name="First_Name" class="form- mb-3" placeholder="*الاسم">
-                                            <input type="text" class="Last_Name" name="Last_Name" class="form-control mb-3" placeholder="*النسب">
-                                            <input type="text" class="Email" name="Email" class="form-control mb-3" placeholder="*البريد الالكتروني">
-                                            <input type="text" class="Phone" name="Phone" class="form-control mb-3" placeholder="*رقم الهاتف">
+                                            <input type="text" class="First_Name" name="First_Name" class="form- mb-3" placeholder="{{__('الاسم') }}">
+                                            <input type="text" class="Last_Name" name="Last_Name" class="form-control mb-3" placeholder="{{__('النسب')}}">
+                                            <input type="text" class="Email" name="Email" class="form-control mb-3" placeholder="{{__('البريد الالكتروني') }}">
+                                            <input type="text" class="Phone" name="Phone" class="form-control mb-3" placeholder="{{__('رقم الهاتف') }}">
                                             <input type="hidden" name="edit_add" class="form-control" value="2">
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">اغلاق</button>
-                                            <button type="submit" class="btn btn-primary">حفظ</button>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{__('اغلاق')}}</button>
+                                            <button type="submit" class="btn btn-primary">{{__('حفظ')}}</button>
                                         </div>
                                     </form>
                                 </div>
@@ -161,7 +161,7 @@
                 </div>
                 @endif
                 <div class=" d-flex flex-row-reverse justify-content-between align-items-center m-4">
-                    <h4>المسؤولين</h4>
+                    <h4>{{__('المسؤولين') }}</h4>
                     <div class="input-group me-3" style="width: 25%;">
                         <input type="text" class="form-control" placeholder="الاسم" style="height: 45px;">
                         <span class="input-group-text" style="border-radius: 0px 16px 16px 0px;"><i class="bi bi-search"></i></span>
@@ -171,10 +171,10 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">رقم الهاتف</th>
-                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">البريد الالكتروني</th>
-                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">النسب</th>
-                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">الاسم</th>
+                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> {{__('رقم الهاتف') }}</th>
+                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('البريد الالكتروني') }}</th>
+                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('النسب')}}</th>
+                            <th class="col-3 text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">{{__('الاسم') }}</th>
                         </tr>
                     </thead>
                     <tbody>

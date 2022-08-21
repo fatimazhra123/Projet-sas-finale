@@ -15,19 +15,20 @@
 <body>
     <div id="home">
         <div class="col-6 d-lg-flex d-none justify-content-center align-items-center" id="home-logo">
-            <img src="{{asset('image/logo.png')}}">
+            <img src="{{asset('assets/logo.png')}}">
         </div>
        
         <div class="col-lg-6 p-3" id="home-text">
-          <button> 
+            <ul>
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                
                     
                         <a rel="alternate" hreflang="{{ $localeCode }}" class="form-select" style="max-width: 100px; border:none; background-color: var(--second-color);" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                             {{ $properties['native'] }}
                         </a>
-                  
+               
                 @endforeach
-                </button>  
+            </ul> 
             <div id="home-text-text">
                 <div>
                     

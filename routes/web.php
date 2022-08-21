@@ -1,7 +1,8 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use \Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use Mcamara\LaravelLocalization\LaravelLocalization as LaravelLocalizationLaravelLocalization;
 
 /*
@@ -14,7 +15,8 @@ use Mcamara\LaravelLocalization\LaravelLocalization as LaravelLocalizationLarave
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::group(['prefix' => LaravelLocalization::setLocale()], function()
+{
 Route::get('/', function () {
     if (session()->has('role')) {
         return redirect('Dashboard');
@@ -107,28 +109,17 @@ Route::get('/verify-email/{id}','UserController@verify_email' )->name('verify_em
 
 Route::get('/logout','UserController@logout');
 
+//for profile
+
+Route::get('/Profile','ProfileController@index');
+Route::post('/Profile','ProfileController@editUser' )->name('edit');
+
+//for profile client
+Route::get('/Profile_Client','Profile_ClientController@index');
+Route::post('/Profile_Client','Profile_ClientController@editUser' )->name('editClient');
+
+// routes/web.php
 
 
 
-Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => ['localeSessionRedirect','localizationRedirect','localeViewPath']], function()
-{
-
-    Route::get('/Sign',function(){
-		return View('/Sign');
-	});
-
-
-    Route::get('/Sign_Up',function(){
-		return View('/Sign_Up');
-	});
- 
-    Route::get('/home',function(){
-		return View('/home');
-	});
-    Route::get('/Dashboard',function(){
-		return View('/Dashboard');
-	});
- 
- 
 });
-

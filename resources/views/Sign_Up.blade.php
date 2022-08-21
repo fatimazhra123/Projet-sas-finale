@@ -15,7 +15,7 @@
 <body>
     <div id="sign">
         <div class="col-6 d-lg-flex d-none justify-content-center align-items-center" id="home-logo">
-            <img src="{{asset('image/logo.png')}}">
+            <img src="{{asset('assets/logo.png')}}">
         </div>
         <div class="col-lg-6 p-0" id="sign-form">
             <!---------------------- Menu Sign ---------------------->
@@ -28,7 +28,7 @@
             </div>
             <!---------------------- Sign Up ---------------------->
             
-            <button> 
+            <ul> 
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     
                         <a rel="alternate" hreflang="{{ $localeCode }}" class="form-select" style="max-width: 100px; border:none; background-color: var(--second-color);" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
@@ -36,7 +36,7 @@
                         </a>
                   
                 @endforeach
-                </button>
+                    </ul>
             <div id="signup">
                 <div class="d-flex flex-column justify-content-center" style="width: 80%; height: 85vh; margin-left: 10%;">
                     <h1 class="text-center">{{__('انشاء حساب') }}</h1>
@@ -119,8 +119,6 @@
         n_identif.classList.remove('d-block');
         n_identif.classList.add('d-none');
     }
-
-
     // Validation Form Sign Up
     const form_signup = document.getElementById('form_signup');
     const first_name = document.getElementById('first_name');
@@ -142,7 +140,6 @@
     const pattern_email = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
     const pattern_name = /[a-zA-Z]/;
     const pattern_phone = /[0-9]/;
-
     client.addEventListener('click' , () => {
         employee.value = '';
         client.value = 'Client';
@@ -151,8 +148,6 @@
         client.value = '';
         employee.value = 'Employe';
     })
-
-
     form_signup.addEventListener('submit', (e) => {
         if ((first_name.value == "") && (last_name.value == "") && (email_signup.value == "") && (phone_signup.value == "") && (password_signup.value == "") && (conf_password_signup.value == "") && client.value == "" && employee.value == "") {
             e.preventDefault();
@@ -170,7 +165,6 @@
                     error_name.innerText ="{{__('يجب أن يتكون الاسم و النسب من ثلاثة أحرف على الأقل') }}";
                 }
             }
-
             if (email_signup.value == "") {
                 e.preventDefault();
                 error_email_signup.innerText ="{{__('املأ حقل البريد الإلكتروني') }}";
@@ -182,7 +176,6 @@
                     error_email_signup.innerText = "{{__('البريد الإلكتروني غير صالح') }}";
                 }
             }
-
             if (phone_signup.value == "") {
                 e.preventDefault();
                 error_phone_signup.innerText = "{{__('املأ حقل رقم الهاتف') }}";
@@ -192,7 +185,6 @@
                 e.preventDefault();
                 error_phone_signup.innerText = "{{__('رقم الهاتف غير صالح') }}";
             }
-
             if (password_signup.value == "") {
                 e.preventDefault();
                 error_password_signup.innerText = "{{__('املأ حقل كلمة المرور') }}";
@@ -212,7 +204,6 @@
                     error_conf_password_signup.innerText = "";
                 }
             }
-
             if (client.value == "" && employee.value == "") {
                 e.preventDefault();
                 role_signup.innerText ="{{__('اختر دورك') }}";
@@ -222,7 +213,6 @@
             }else{
                 role_signup.innerText="";
             }
-
             if ((error_name.textContent == "") && (error_email_signup.textContent == "") && (error_phone_signup.textContent == "") && (error_password_signup.textContent == "") && (error_conf_password_signup.textContent == "") && (role_signup.textContent == "")) {
                 form_signup.submit();
             }
@@ -235,5 +225,4 @@
             conf_password_signup.style.color = "red";
         }
     });
-
 </script>

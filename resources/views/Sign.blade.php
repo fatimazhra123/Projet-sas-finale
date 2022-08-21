@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  dir="{{LaravelLocalization::getCurrentLocaleDirection() }}">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,7 @@
    
        <div id="sign">
         <div class="col-6 d-lg-flex d-none justify-content-center align-items-center" id="home-logo">
-            <img src="{{asset('image/logo.png')}}">
+            <img src="{{asset('assets/logo.png')}}">
         </div>
         <div class="col-lg-6 p-0" id="sign-form">
             <!---------------------- Menu Sign ---------------------->
@@ -28,15 +28,16 @@
                 <a href="Sign" type="button" class="nav-link w-50 h4 text-dark text-center active" id="btn_signin">{{__('تسجيل الدخول') }}</a>
             </div>
             <!---------------------- Sign In ---------------------->
-            <button> 
+            <ul>
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                
                     
                         <a rel="alternate" hreflang="{{ $localeCode }}" class="form-select" style="max-width: 100px; border:none; background-color: var(--second-color);" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                             {{ $properties['native'] }}
                         </a>
-                  
+               
                 @endforeach
-                </button>
+            </ul>
             <div id="signin">
                 <div class="d-flex flex-column justify-content-center gap-2" style="width: 80%; height: 85vh; margin-left: 10%;">
                     <h1 class="text-center">{{__('تسجيل الدخول') }}</h1>
@@ -84,7 +85,7 @@
     form_signin.addEventListener('submit', (e) => {
         if ((email_signin.value == "") && (password_signin.value == "")) {
             e.preventDefault();
-            error_signin.innerHTML ="<p class='text-danger'>{{__('المرجوا ادخل بريدك الالكتروني و القن السري لتسجيل الدخول ')}}</p>";
+            error_signin.innerHTML ="<p class='text-danger'>{{__('المرجوا ادخال بريدك الالكتروني و القن السري لتسجيل الدخول')}}</p>";
         } else {
             error_signin.innerText = "{{__('ادخل بريدك الالكتروني و القن السري لتسجيل الدخول') }}";
             if (email_signin.value == "") {
